@@ -1,0 +1,39 @@
+.friend {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 38%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1.5em;
+    border-radius: 10px;
+    border: 2px solid #EB5E28;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+
+    .name {
+        width: 100%;
+        background-color: #252422;
+
+        h2 {
+            box-sizing: border-box;
+            padding: 0 .4em;
+            color: #CCC5B9;
+        }
+    }
+
+    .info {
+        box-sizing: border-box;
+        padding: 0 .4em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #CCC5B9;
+
+        h3 {
+            color: #252422;
+        }
+    }
+}

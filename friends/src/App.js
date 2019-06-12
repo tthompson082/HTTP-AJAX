@@ -29,6 +29,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
+        <h1>My Friends!</h1>
         <FriendsList friendsProp={this.state.friends} />
       </div>
     )
