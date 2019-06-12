@@ -9,7 +9,8 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      friends: []
+      friends: [],
+      postFriendMessage: ''
     }
   }
 
@@ -32,6 +33,10 @@ class App extends React.Component {
       .post('http://localhost:5000/friends', friend)
       .then(res => {
         console.log(res);
+        this.setState({
+          postFriendMessage: res.data.successMessage
+        })
+        window.location.reload();
       })
       .catch(err => {
         console.log(err)
