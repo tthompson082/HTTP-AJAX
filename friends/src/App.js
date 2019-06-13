@@ -75,7 +75,7 @@ class App extends React.Component {
     return(
       <div>
         <Route exact path='/' render={(props) => (
-            <div>
+            <div className='body'>
               <h1>My Friends!</h1>
               <FriendsList {...props} friendsProp={this.state.friends} deleteFriend={this.deleteFriend} />
                 <button onClick={this.toggle} className='add-friend-button'>Add A Friend!</button>

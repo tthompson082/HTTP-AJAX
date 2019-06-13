@@ -53,7 +53,7 @@ class UpdateFriend extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='update-body'>
                 <h1>Update</h1>
                 <div className='update-form'>
                     <form onSubmit={this.putFriend}>

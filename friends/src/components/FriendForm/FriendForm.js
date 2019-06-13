@@ -1,6 +1,6 @@
 import React from 'react';
 import './FriendForm.scss';
-import { Modal, Form, Button, Input, FormGroup } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Form, Button, Input, FormGroup } from 'reactstrap';
 
 class FriendForm extends React.Component {
     constructor(props) {
@@ -47,21 +47,23 @@ class FriendForm extends React.Component {
         return(
             <div className='friend-form'>
                 <Modal isOpen={this.props.modal} toggle={this.props.toggle} className={this.props.className}>
-                    <Form onSubmit={this.addFriend}>
-                        <FormGroup>
-                            <Input required type='text' name='name' placeholder='Name' onChange={this.handleChange} value={this.state.addFriend.name} />
-                        </FormGroup>
-                        <FormGroup>
-                            <Input required type='text' name='age' placeholder='Age' onChange={this.handleChange} value={this.state.addFriend.age} />
-                        </FormGroup>
-                        <FormGroup>
-                            <Input required type='text' name='email' placeholder='Email' onChange={this.handleChange} value={this.state.addFriend.email} />
-                        </FormGroup>
-                        <FormGroup>
-                            <Button block>Add Friend!</Button>
-                        </FormGroup>
-                    </Form>
-                    <button className='home-button' onClick={this.props.toggle}>Home</button>
+                    <ModalHeader toggle={this.props.toggle}>Add A Friend!</ModalHeader>
+                    <ModalBody>
+                        <Form onSubmit={this.addFriend}>
+                            <FormGroup>
+                                <Input required type='text' name='name' placeholder='Name' onChange={this.handleChange} value={this.state.addFriend.name} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Input required type='text' name='age' placeholder='Age' onChange={this.handleChange} value={this.state.addFriend.age} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Input required type='text' name='email' placeholder='Email' onChange={this.handleChange} value={this.state.addFriend.email} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Button block>Add Friend!</Button>
+                            </FormGroup>
+                        </Form>
+                    </ModalBody>
                 </Modal>
             </div>
         )
