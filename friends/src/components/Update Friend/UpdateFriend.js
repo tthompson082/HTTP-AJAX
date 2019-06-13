@@ -37,6 +37,11 @@ class UpdateFriend extends React.Component {
         this.props.updateFriend(this.state.friend)
     }
 
+    delFriend = event => {
+        event.preventDefault();
+        this.props.deleteFriend(this.state.friend)
+    }
+
     handleChange = event => {
         this.setState({
             friend: {
@@ -57,7 +62,7 @@ class UpdateFriend extends React.Component {
                         <input required type='text' name='email' placeholder='Email' onChange={this.handleChange} value={this.state.friend.email} />
                         <button>Update Friend!</button>
                     </form>
-                    <button>Delete Friend!</button>
+                    <button onClick={this.delFriend} className='delete'>Delete Friend!</button>
                 </div>
                 <Link to='/'>
                     <button className='home-button'>Home</button>

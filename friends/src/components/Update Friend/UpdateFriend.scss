@@ -34,8 +34,25 @@
             font-weight: bolder;
             border-radius: 10px;
             outline: none;
+            cursor: pointer;
         }
     }
+}
+
+.delete {
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 1.25rem;
+    background-color: #EB5E28;
+    color: white;
+    font-weight: bolder;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 1em;
+    width: 50%;
+    outline:none;
+    cursor: pointer;
 }
 
 .home-button {
@@ -49,4 +66,5 @@
     display: block;
     margin: 1.5em auto;
     text-decoration: none;
+    cursor: pointer;
 }

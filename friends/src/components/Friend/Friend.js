@@ -9,7 +9,6 @@ const Friend = (props) => {
             <div className='name'>
                 <h2>{props.friendProp.name}</h2>
                 <div className="buttons">
-                    <button className='delete'>Delete</button>
                     <Link to={`/update/${props.friendProp.id}`}>
                         <button className='update'>Update</button>
                     </Link>
