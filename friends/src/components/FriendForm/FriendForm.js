@@ -1,5 +1,6 @@
 import React from 'react';
 import './FriendForm.scss';
+import { Link } from 'react-router-dom';
 
 class FriendForm extends React.Component {
     constructor(props) {
@@ -44,6 +45,9 @@ class FriendForm extends React.Component {
                     <input required type='text' name='email' placeholder='Email' onChange={this.handleChange} value={this.state.addFriend.email} />
                     <button>Add Friend!</button>
                 </form>
+                <Link to='/'>
+                    <button className='home-button'>Home</button>
+                </Link>
             </div>
         )
     }

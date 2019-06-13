@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import axios from 'axios';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 import FriendsList from './components/FriendsList/FriendsList';
 import FriendForm from './components/FriendForm/FriendForm';
@@ -38,6 +38,7 @@ class App extends React.Component {
         this.setState({
           friends: res.data
         })
+        this.props.history.push('/')
       })
       .catch(err => {
         console.log(err)
@@ -69,8 +70,13 @@ class App extends React.Component {
             <div>
               <h1>My Friends!</h1>
               <FriendsList {...props} friendsProp={this.state.friends} deleteFriend={this.deleteFriend} />
-              <FriendForm {...props} postFriend={this.postFriend} />
+              <Link to={'/add-friend'}>
+                <button className='add-friend-button'>Add A Friend!</button>
+              </Link>
             </div>
+        )} />
+        <Route path='/add-friend' render={(props) => (
+          <FriendForm {...props} postFriend={this.postFriend} />
         )} />
         <Route 
         path='/update/:id'
