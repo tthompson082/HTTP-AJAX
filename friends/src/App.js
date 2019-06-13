@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 
 import FriendsList from './components/FriendsList/FriendsList';
 import FriendForm from './components/FriendForm/FriendForm';
+import UpdateFriend from './components/Update Friend/UpdateFriend';
 
 class App extends React.Component {
   constructor() {
@@ -53,6 +54,10 @@ class App extends React.Component {
               <FriendForm {...props} postFriend={this.postFriend} />
             </div>
         )} />
+        <Route 
+        path='/update/:id'
+        render={props => (<UpdateFriend {...props} friends={this.state.friends} />)}
+        />
       </div>
 
 

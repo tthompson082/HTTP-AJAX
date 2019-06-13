@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import './Friend.scss';
 
 const Friend = (props) => {
@@ -8,7 +10,9 @@ const Friend = (props) => {
                 <h2>{props.friendProp.name}</h2>
                 <div className="buttons">
                     <button className='delete'>Delete</button>
-                    <button className='update'>Update</button>
+                    <Link to={`/update/${props.friendProp.id}`}>
+                        <button className='update'>Update</button>
+                    </Link>
                 </div>
             </div>
             <div className='info'>
