@@ -16,11 +16,29 @@
     .name {
         width: 100%;
         background-color: #252422;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         h2 {
             box-sizing: border-box;
             padding: 0 .4em;
             color: #CCC5B9;
+        }
+
+        .delete {
+            box-sizing: border-box;
+            margin: 0 1em;
+            color: #252422;
+            background-color: #CCC5B9;
+            outline: none;
+            display: none;
+        }
+
+        &:hover {
+            .delete {
+                display: inline-flex;
+            }
         }
     }
 

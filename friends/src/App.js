@@ -34,9 +34,8 @@ class App extends React.Component {
       .then(res => {
         console.log(res);
         this.setState({
-          postFriendMessage: res.data.successMessage
+          friends: res.data
         })
-        window.location.reload();
       })
       .catch(err => {
         console.log(err)

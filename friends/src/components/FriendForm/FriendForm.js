@@ -6,7 +6,6 @@ class FriendForm extends React.Component {
         super(props);
         this.state = {
             addFriend: {
-                id: Date.now(),
                 name: '',
                 age: '',
                 email: ''
