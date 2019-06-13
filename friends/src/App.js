@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import FriendsList from './components/FriendsList/FriendsList';
 import FriendForm from './components/FriendForm/FriendForm';

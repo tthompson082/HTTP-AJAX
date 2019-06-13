@@ -1,7 +1,6 @@
 import React from 'react';
 import './FriendForm.scss';
-import { Link } from 'react-router-dom';
-import { Modal, Form, Button, Input, FormGroup, Col } from 'reactstrap';
+import { Modal, Form, Button, Input, FormGroup } from 'reactstrap';
 
 class FriendForm extends React.Component {
     constructor(props) {
