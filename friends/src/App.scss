@@ -3,6 +3,9 @@ html {
   box-sizing: border-box;
   padding: 10px;
 }
+div {
+  background-color: #403D39;
+}
 
 h1 {
   text-align: center;
@@ -14,7 +17,10 @@ h1 {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+}
+button {
+  outline: none !important;
 }
 
 .add-friend-button {
