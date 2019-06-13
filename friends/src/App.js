@@ -12,7 +12,8 @@ class App extends React.Component {
     super()
     this.state = {
       friends: [],
-      postFriendMessage: ''
+      postFriendMessage: '',
+      modal: false
     }
   }
 
@@ -36,9 +37,10 @@ class App extends React.Component {
       .then(res => {
         console.log(res);
         this.setState({
-          friends: res.data
+          friends: res.data,
+          modal: false
         })
-        this.props.history.push('/')
+        // this.props.history.push('/')
       })
       .catch(err => {
         console.log(err)
@@ -63,6 +65,12 @@ class App extends React.Component {
       .catch(err => console.log(err))
 }
 
+  toggle = e => {
+    this.setState(prevState => ({
+        modal: !prevState.modal
+    }))
+  }
+
   render() {
     return(
       <div>
@@ -70,14 +78,10 @@ class App extends React.Component {
             <div>
               <h1>My Friends!</h1>
               <FriendsList {...props} friendsProp={this.state.friends} deleteFriend={this.deleteFriend} />
-              <Link to={'/add-friend'}>
-                <button className='add-friend-button'>Add A Friend!</button>
-              </Link>
+                <button onClick={this.toggle} className='add-friend-button'>Add A Friend!</button>
             </div>
         )} />
-        <Route path='/add-friend' render={(props) => (
-          <FriendForm {...props} postFriend={this.postFriend} />
-        )} />
+        <FriendForm postFriend={this.postFriend} modal={this.state.modal} toggle={this.toggle}/>
         <Route 
         path='/update/:id'
         render={props => (<UpdateFriend {...props} friends={this.state.friends} deleteFriend={this.deleteFriend} updateFriend={this.updateFriend} />)}
