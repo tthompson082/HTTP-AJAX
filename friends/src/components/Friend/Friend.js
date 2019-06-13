@@ -6,7 +6,10 @@ const Friend = (props) => {
         <div className='friend'>
             <div className='name'>
                 <h2>{props.friendProp.name}</h2>
-                <button className='delete'>Delete</button>
+                <div className="buttons">
+                    <button className='delete'>Delete</button>
+                    <button className='update'>Update</button>
+                </div>
             </div>
             <div className='info'>
                 <h3 className='age'>{props.friendProp.age}</h3>
